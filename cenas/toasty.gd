@@ -30,10 +30,9 @@ func _process(delta):
 			ativo = false
 
 func toasty():
-	
-	if randf_range(1, 1) == 1:
-		if ativo:
-			return
+	if ativo:
+		return
+	if randi_range(1, 10) >= 5:
 		sprite.position = inicio
 		ativo = true
 		indo = true
