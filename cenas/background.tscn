@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cmn41cyo8j625"]
+
+[ext_resource type="Shader" uid="uid://bo5dr248glse6" path="res://scroll.gdshader" id="1_607br"]
+[ext_resource type="Texture2D" uid="uid://crw3gygo3h7ux" path="res://Assets Space Invades/Sprites/background.png" id="2_de00n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hwlf"]
+shader = ExtResource("1_607br")
+
+[node name="Background" type="Control" unique_id=2103416508]
+texture_repeat = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="backgroundPattern" type="TextureRect" parent="." unique_id=1867396092]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_4hwlf")
+layout_mode = 0
+offset_right = 254.0
+offset_bottom = 256.0
+texture = ExtResource("2_de00n")
+expand_mode = 3

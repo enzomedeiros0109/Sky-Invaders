@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hnxkgrio3001"
+path="res://.godot/imported/missilAlien.mp3-74ee868de86f5767057946bd25cd4e9e.mp3str"
+
+[deps]
+
+source_file="res://Assets Space Invades/sfx/missilAlien.mp3"
+dest_files=["res://.godot/imported/missilAlien.mp3-74ee868de86f5767057946bd25cd4e9e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

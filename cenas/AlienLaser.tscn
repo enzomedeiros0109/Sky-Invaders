@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://rq2qf3yvcw0"]
+
+[ext_resource type="Script" uid="uid://cdvw5otuoo2d8" path="res://cenas/AlienLaser.gd" id="1_r7gdj"]
+[ext_resource type="Texture2D" uid="uid://c1231txenig3j" path="res://Assets Space Invades/Sprites/disparoInimigo.png" id="2_r7gdj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mt72"]
+size = Vector2(6, 16)
+
+[node name="AlienLaser" type="Area2D" unique_id=240915459 groups=["misseis"]]
+rotation = 3.1415927
+script = ExtResource("1_r7gdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=130139900]
+rotation = -1.5707964
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_r7gdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=699979214]
+rotation = 3.1415927
+shape = SubResource("RectangleShape2D_2mt72")
+metadata/_edit_group_ = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

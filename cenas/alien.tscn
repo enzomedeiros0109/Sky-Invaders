@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://c5gexb81ld8yw"]
+
+[ext_resource type="Script" uid="uid://caspnv02nkni2" path="res://cenas/alien.gd" id="1_o4thi"]
+[ext_resource type="Texture2D" uid="uid://d06senpi10iut" path="res://Assets Space Invades/Sprites/planes.png" id="2_o4thi"]
+[ext_resource type="Texture2D" uid="uid://d1ekpcesxsxs0" path="res://Assets Space Invades/Sprites/explosion.png" id="3_5lcmi"]
+[ext_resource type="AudioStream" uid="uid://128qtprfc5nd" path="res://Assets Space Invades/sfx/audioExplosion.mp3" id="4_jiako"]
+[ext_resource type="AudioStream" uid="uid://hnxkgrio3001" path="res://Assets Space Invades/sfx/missilAlien.mp3" id="5_qtlvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhvw8"]
+size = Vector2(18, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4thi"]
+size = Vector2(18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiako"]
+atlas = ExtResource("3_5lcmi")
+region = Rect2(0, 0, 218, 219)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtlvi"]
+atlas = ExtResource("3_5lcmi")
+region = Rect2(218, 0, 218, 219)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx6jj"]
+atlas = ExtResource("3_5lcmi")
+region = Rect2(436, 0, 218, 219)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w76g3"]
+atlas = ExtResource("3_5lcmi")
+region = Rect2(0, 0, 218, 219)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjosk"]
+atlas = ExtResource("3_5lcmi")
+region = Rect2(218, 0, 218, 219)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on307"]
+atlas = ExtResource("3_5lcmi")
+region = Rect2(436, 0, 218, 219)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fta0x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiako")
+}],
+"loop": false,
+"name": &"exp_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtlvi")
+}],
+"loop": false,
+"name": &"exp_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx6jj")
+}],
+"loop": false,
+"name": &"exp_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w76g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjosk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on307")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Alien" type="CharacterBody2D" unique_id=912591015 groups=["aliens"]]
+position = Vector2(0, -5)
+script = ExtResource("1_o4thi")
+metadata/_edit_group_ = true
+
+[node name="SpriteAlien" type="Sprite2D" parent="." unique_id=112207840]
+position = Vector2(-1.9073486e-06, -5.9604645e-08)
+rotation = 3.1415927
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_o4thi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1986030068]
+shape = SubResource("RectangleShape2D_bhvw8")
+metadata/_edit_group_ = true
+
+[node name="TimerMovimento" type="Timer" parent="." unique_id=701001101]
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2037285886]
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1264451293]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1950648382]
+shape = SubResource("RectangleShape2D_o4thi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=471984933]
+visible = false
+texture_filter = 1
+position = Vector2(3.0000005, 0)
+scale = Vector2(0.104, 0.1)
+sprite_frames = SubResource("SpriteFrames_fta0x")
+animation = &"exp_1"
+
+[node name="AudioExplosion" type="AudioStreamPlayer" parent="." unique_id=687106681]
+stream = ExtResource("4_jiako")
+volume_db = -45.0
+pitch_scale = 1.5
+
+[node name="AudioMissil" type="AudioStreamPlayer" parent="." unique_id=415743336]
+stream = ExtResource("5_qtlvi")
+volume_db = -20.0
+
+[connection signal="timeout" from="TimerMovimento" to="." method="_on_timer_movimento_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

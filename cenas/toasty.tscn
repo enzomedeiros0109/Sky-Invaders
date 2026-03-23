@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d13kvugmfnfxy"]
+
+[ext_resource type="Script" uid="uid://rqvx3gq8w7eo" path="res://cenas/toasty.gd" id="1_kogkm"]
+[ext_resource type="Texture2D" uid="uid://dur80xtkscttp" path="res://Assets Space Invades/Sprites/Toasty.png" id="2_hxal7"]
+[ext_resource type="AudioStream" uid="uid://bmf4fe6kwiila" path="res://Assets Space Invades/sfx/toastymp3.mp3" id="3_atl8u"]
+
+[node name="toasty" type="Node2D" unique_id=1410044264]
+script = ExtResource("1_kogkm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1232890942]
+position = Vector2(-14, 268)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_hxal7")
+
+[node name="AudioToasty" type="AudioStreamPlayer" parent="." unique_id=533886836]
+stream = ExtResource("3_atl8u")
+volume_db = -30.0

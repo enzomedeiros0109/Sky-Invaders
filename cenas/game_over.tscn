@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://6odco8ntbe0j"]
+
+[ext_resource type="FontFile" uid="uid://ddcx8wgonfvpv" path="res://fonts/atari-classic-font/AtariClassic-gry3.ttf" id="1_sc4lk"]
+[ext_resource type="Script" uid="uid://8hwfifyg57e4" path="res://cenas/game_over.gd" id="1_un0q3"]
+[ext_resource type="Texture2D" uid="uid://b1rk5i83wdkdf" path="res://Assets Space Invades/Sprites/backgroundGAMEOVER.png" id="2_jcnxb"]
+
+[node name="GameOver" type="Node2D" unique_id=2020990926]
+script = ExtResource("1_un0q3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=966109664]
+modulate = Color(1, 1, 1, 0.7647059)
+position = Vector2(127, 128)
+scale = Vector2(0.12402344, 0.125)
+texture = ExtResource("2_jcnxb")
+
+[node name="Label" type="Label" parent="." unique_id=1510801261]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 46.0
+offset_top = 26.0
+offset_right = 208.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_sc4lk")
+theme_override_font_sizes/font_size = 18
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BotaoReiniciar" type="Button" parent="." unique_id=154660518]
+offset_left = 67.0
+offset_top = 194.5
+offset_right = 187.0
+offset_bottom = 225.5
+theme_override_fonts/font = ExtResource("1_sc4lk")
+theme_override_font_sizes/font_size = 16
+text = "RESTART"
+
+[node name="RecordeLabel" type="Label" parent="." unique_id=613205209]
+offset_left = 55.0
+offset_top = 69.0
+offset_right = 199.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("1_sc4lk")
+text = "Recorde"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TempoLabel" type="Label" parent="." unique_id=279674112]
+offset_left = 55.0
+offset_top = 128.0
+offset_right = 199.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("1_sc4lk")
+text = "Tempo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="BotaoReiniciar" to="." method="_on_botao_reiniciar_pressed"]

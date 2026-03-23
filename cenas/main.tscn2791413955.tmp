@@ -1,0 +1,280 @@
+[gd_scene format=3 uid="uid://dgldlbmf0ulgp"]
+
+[ext_resource type="PackedScene" uid="uid://dr5808v35xrrj" path="res://cenas/jogador.tscn" id="1_4fhxt"]
+[ext_resource type="Script" uid="uid://d4aupsptn1qhn" path="res://cenas/main.gd" id="1_b30p5"]
+[ext_resource type="PackedScene" uid="uid://crxvw11jscuxh" path="res://cenas/alien_group.tscn" id="3_4fhxt"]
+[ext_resource type="FontFile" uid="uid://ddcx8wgonfvpv" path="res://fonts/atari-classic-font/AtariClassic-gry3.ttf" id="3_b30p5"]
+[ext_resource type="PackedScene" uid="uid://iej33yxy5r1v" path="res://cenas/bloco.tscn" id="5_5wwvk"]
+[ext_resource type="Script" uid="uid://bx54md1dmimpt" path="res://cenas/chao.gd" id="6_bhvw8"]
+[ext_resource type="Script" uid="uid://chst2gfk8p35e" path="res://cenas/area_game_over.gd" id="7_l8342"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1d1r"]
+size = Vector2(254, 20)
+
+[node name="Main" type="Node" unique_id=1838718462]
+script = ExtResource("1_b30p5")
+
+[node name="Jogador" parent="." unique_id=534862805 groups=["tanque"] instance=ExtResource("1_4fhxt")]
+position = Vector2(127, 249)
+
+[node name="AlienGroup" parent="." unique_id=401593678 instance=ExtResource("3_4fhxt")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=87287250]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 53.0
+grow_horizontal = 2
+
+[node name="TituloPontos" type="Label" parent="VBoxContainer" unique_id=1682469297]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_b30p5")
+theme_override_font_sizes/font_size = 14
+text = "Pontos"
+horizontal_alignment = 1
+
+[node name="LabelPontos" type="Label" parent="VBoxContainer" unique_id=21141981]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_b30p5")
+theme_override_font_sizes/font_size = 14
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="Bases" type="Node" parent="." unique_id=1386898365]
+
+[node name="Base" type="Node2D" parent="Bases" unique_id=1003329521]
+position = Vector2(24, 227)
+metadata/_edit_group_ = true
+
+[node name="bloco" parent="Bases/Base" unique_id=1336807953 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 8)
+
+[node name="bloco2" parent="Bases/Base" unique_id=2037088256 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 12)
+
+[node name="bloco3" parent="Bases/Base" unique_id=2098387233 instance=ExtResource("5_5wwvk")]
+position = Vector2(-7, 4)
+
+[node name="bloco4" parent="Bases/Base" unique_id=681451577 instance=ExtResource("5_5wwvk")]
+position = Vector2(-3, 4)
+
+[node name="bloco5" parent="Bases/Base" unique_id=615506625 instance=ExtResource("5_5wwvk")]
+position = Vector2(1, 4)
+
+[node name="bloco6" parent="Bases/Base" unique_id=815128530 instance=ExtResource("5_5wwvk")]
+position = Vector2(5, 4)
+
+[node name="bloco7" parent="Bases/Base" unique_id=1257138013 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 8)
+
+[node name="bloco8" parent="Bases/Base" unique_id=523782429 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 12)
+
+[node name="bloco9" parent="Bases/Base" unique_id=667271175 instance=ExtResource("5_5wwvk")]
+position = Vector2(-5, 0)
+
+[node name="bloco10" parent="Bases/Base" unique_id=215691700 instance=ExtResource("5_5wwvk")]
+position = Vector2(-1, 0)
+
+[node name="bloco11" parent="Bases/Base" unique_id=1319643299 instance=ExtResource("5_5wwvk")]
+position = Vector2(3, 0)
+
+[node name="Base2" type="Node2D" parent="Bases" unique_id=25839334]
+position = Vector2(66, 227)
+metadata/_edit_group_ = true
+
+[node name="bloco" parent="Bases/Base2" unique_id=79578000 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 8)
+
+[node name="bloco2" parent="Bases/Base2" unique_id=528020870 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 12)
+
+[node name="bloco3" parent="Bases/Base2" unique_id=154160811 instance=ExtResource("5_5wwvk")]
+position = Vector2(-7, 4)
+
+[node name="bloco4" parent="Bases/Base2" unique_id=1375799543 instance=ExtResource("5_5wwvk")]
+position = Vector2(-3, 4)
+
+[node name="bloco5" parent="Bases/Base2" unique_id=1166933787 instance=ExtResource("5_5wwvk")]
+position = Vector2(1, 4)
+
+[node name="bloco6" parent="Bases/Base2" unique_id=1244103810 instance=ExtResource("5_5wwvk")]
+position = Vector2(5, 4)
+
+[node name="bloco7" parent="Bases/Base2" unique_id=521462911 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 8)
+
+[node name="bloco8" parent="Bases/Base2" unique_id=1149440128 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 12)
+
+[node name="bloco9" parent="Bases/Base2" unique_id=322721493 instance=ExtResource("5_5wwvk")]
+position = Vector2(-5, 0)
+
+[node name="bloco10" parent="Bases/Base2" unique_id=864844744 instance=ExtResource("5_5wwvk")]
+position = Vector2(-1, 0)
+
+[node name="bloco11" parent="Bases/Base2" unique_id=689565865 instance=ExtResource("5_5wwvk")]
+position = Vector2(3, 0)
+
+[node name="Base3" type="Node2D" parent="Bases" unique_id=1160703032]
+position = Vector2(107, 227)
+metadata/_edit_group_ = true
+
+[node name="bloco" parent="Bases/Base3" unique_id=1235863749 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 8)
+
+[node name="bloco2" parent="Bases/Base3" unique_id=199707977 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 12)
+
+[node name="bloco3" parent="Bases/Base3" unique_id=1714025447 instance=ExtResource("5_5wwvk")]
+position = Vector2(-7, 4)
+
+[node name="bloco4" parent="Bases/Base3" unique_id=301684115 instance=ExtResource("5_5wwvk")]
+position = Vector2(-3, 4)
+
+[node name="bloco5" parent="Bases/Base3" unique_id=2041921622 instance=ExtResource("5_5wwvk")]
+position = Vector2(1, 4)
+
+[node name="bloco6" parent="Bases/Base3" unique_id=249480220 instance=ExtResource("5_5wwvk")]
+position = Vector2(5, 4)
+
+[node name="bloco7" parent="Bases/Base3" unique_id=510904093 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 8)
+
+[node name="bloco8" parent="Bases/Base3" unique_id=587286159 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 12)
+
+[node name="bloco9" parent="Bases/Base3" unique_id=1842147592 instance=ExtResource("5_5wwvk")]
+position = Vector2(-5, 0)
+
+[node name="bloco10" parent="Bases/Base3" unique_id=605501956 instance=ExtResource("5_5wwvk")]
+position = Vector2(-1, 0)
+
+[node name="bloco11" parent="Bases/Base3" unique_id=1100906810 instance=ExtResource("5_5wwvk")]
+position = Vector2(3, 0)
+
+[node name="Base4" type="Node2D" parent="Bases" unique_id=1846573962]
+position = Vector2(151, 227)
+metadata/_edit_group_ = true
+
+[node name="bloco" parent="Bases/Base4" unique_id=452004774 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 8)
+
+[node name="bloco2" parent="Bases/Base4" unique_id=1745454033 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 12)
+
+[node name="bloco3" parent="Bases/Base4" unique_id=382089823 instance=ExtResource("5_5wwvk")]
+position = Vector2(-7, 4)
+
+[node name="bloco4" parent="Bases/Base4" unique_id=798609104 instance=ExtResource("5_5wwvk")]
+position = Vector2(-3, 4)
+
+[node name="bloco5" parent="Bases/Base4" unique_id=853276299 instance=ExtResource("5_5wwvk")]
+position = Vector2(1, 4)
+
+[node name="bloco6" parent="Bases/Base4" unique_id=490633197 instance=ExtResource("5_5wwvk")]
+position = Vector2(5, 4)
+
+[node name="bloco7" parent="Bases/Base4" unique_id=611015294 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 8)
+
+[node name="bloco8" parent="Bases/Base4" unique_id=1690299908 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 12)
+
+[node name="bloco9" parent="Bases/Base4" unique_id=1176697898 instance=ExtResource("5_5wwvk")]
+position = Vector2(-5, 0)
+
+[node name="bloco10" parent="Bases/Base4" unique_id=1199504373 instance=ExtResource("5_5wwvk")]
+position = Vector2(-1, 0)
+
+[node name="bloco11" parent="Bases/Base4" unique_id=184053288 instance=ExtResource("5_5wwvk")]
+position = Vector2(3, 0)
+
+[node name="Base5" type="Node2D" parent="Bases" unique_id=1640404909]
+position = Vector2(190, 227)
+metadata/_edit_group_ = true
+
+[node name="bloco" parent="Bases/Base5" unique_id=1838935030 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 8)
+
+[node name="bloco2" parent="Bases/Base5" unique_id=1811866171 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 12)
+
+[node name="bloco3" parent="Bases/Base5" unique_id=2063918667 instance=ExtResource("5_5wwvk")]
+position = Vector2(-7, 4)
+
+[node name="bloco4" parent="Bases/Base5" unique_id=365333018 instance=ExtResource("5_5wwvk")]
+position = Vector2(-3, 4)
+
+[node name="bloco5" parent="Bases/Base5" unique_id=1912471358 instance=ExtResource("5_5wwvk")]
+position = Vector2(1, 4)
+
+[node name="bloco6" parent="Bases/Base5" unique_id=747465214 instance=ExtResource("5_5wwvk")]
+position = Vector2(5, 4)
+
+[node name="bloco7" parent="Bases/Base5" unique_id=1891971525 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 8)
+
+[node name="bloco8" parent="Bases/Base5" unique_id=55845874 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 12)
+
+[node name="bloco9" parent="Bases/Base5" unique_id=1996740925 instance=ExtResource("5_5wwvk")]
+position = Vector2(-5, 0)
+
+[node name="bloco10" parent="Bases/Base5" unique_id=1245533038 instance=ExtResource("5_5wwvk")]
+position = Vector2(-1, 0)
+
+[node name="bloco11" parent="Bases/Base5" unique_id=1416786782 instance=ExtResource("5_5wwvk")]
+position = Vector2(3, 0)
+
+[node name="Base6" type="Node2D" parent="Bases" unique_id=1773982323]
+position = Vector2(228, 227)
+metadata/_edit_group_ = true
+
+[node name="bloco" parent="Bases/Base6" unique_id=556403634 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 8)
+
+[node name="bloco2" parent="Bases/Base6" unique_id=419031505 instance=ExtResource("5_5wwvk")]
+position = Vector2(-9, 12)
+
+[node name="bloco3" parent="Bases/Base6" unique_id=1151137804 instance=ExtResource("5_5wwvk")]
+position = Vector2(-7, 4)
+
+[node name="bloco4" parent="Bases/Base6" unique_id=1313440063 instance=ExtResource("5_5wwvk")]
+position = Vector2(-3, 4)
+
+[node name="bloco5" parent="Bases/Base6" unique_id=1096728638 instance=ExtResource("5_5wwvk")]
+position = Vector2(1, 4)
+
+[node name="bloco6" parent="Bases/Base6" unique_id=835489722 instance=ExtResource("5_5wwvk")]
+position = Vector2(5, 4)
+
+[node name="bloco7" parent="Bases/Base6" unique_id=431298262 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 8)
+
+[node name="bloco8" parent="Bases/Base6" unique_id=597446871 instance=ExtResource("5_5wwvk")]
+position = Vector2(7, 12)
+
+[node name="bloco9" parent="Bases/Base6" unique_id=685585261 instance=ExtResource("5_5wwvk")]
+position = Vector2(-5, 0)
+
+[node name="bloco10" parent="Bases/Base6" unique_id=1413347924 instance=ExtResource("5_5wwvk")]
+position = Vector2(-1, 0)
+
+[node name="bloco11" parent="Bases/Base6" unique_id=257878401 instance=ExtResource("5_5wwvk")]
+position = Vector2(3, 0)
+
+[node name="Chao" type="Node" parent="." unique_id=1048261923]
+script = ExtResource("6_bhvw8")
+
+[node name="AreaGameOver" type="Area2D" parent="." unique_id=506570931]
+position = Vector2(134, 277)
+script = ExtResource("7_l8342")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaGameOver" unique_id=526738249]
+position = Vector2(-7, 0)
+shape = SubResource("RectangleShape2D_v1d1r")
+
+[connection signal="area_entered" from="AreaGameOver" to="AreaGameOver" method="_on_area_entered"]

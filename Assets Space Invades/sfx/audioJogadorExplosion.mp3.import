@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwb6vyf52bdin"
+path="res://.godot/imported/audioJogadorExplosion.mp3-24659c280821f133cbb26ec7c53bce6a.mp3str"
+
+[deps]
+
+source_file="res://Assets Space Invades/sfx/audioJogadorExplosion.mp3"
+dest_files=["res://.godot/imported/audioJogadorExplosion.mp3-24659c280821f133cbb26ec7c53bce6a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

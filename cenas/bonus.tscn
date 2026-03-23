@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://budh3r35heatg"]
+
+[ext_resource type="Script" uid="uid://cqxkvp7p27y5" path="res://cenas/bonus.gd" id="1_51s8v"]
+[ext_resource type="Texture2D" uid="uid://bsnwd1lie6x4a" path="res://Assets Space Invades/Sprites/bonus.png" id="2_nj0eb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j86uh"]
+size = Vector2(251, 235)
+
+[sub_resource type="Animation" id="Animation_nj0eb"]
+resource_name = "girar"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_36gnw"]
+_data = {
+&"girar": SubResource("Animation_nj0eb")
+}
+
+[node name="Area2D" type="Area2D" unique_id=1387507402]
+position = Vector2(124, 133)
+script = ExtResource("1_51s8v")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1990257189]
+position = Vector2(-1.1920929e-07, -2.3841858e-07)
+scale = Vector2(0.05, 0.05)
+shape = SubResource("RectangleShape2D_j86uh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1313728076]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_nj0eb")
+
+[node name="Girar" type="AnimationPlayer" parent="." unique_id=70667642]
+libraries/ = SubResource("AnimationLibrary_36gnw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
